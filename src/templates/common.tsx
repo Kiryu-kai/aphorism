@@ -17,7 +17,7 @@ export default function PageTemplate({ data: { mdx } }) {
         <title>{mdx.frontmatter.words} | #桐生ココの格言 | 桐生会</title>
       </Helmet>
 
-      <h1>{mdx.frontmatter.words}</h1>
+      <h1>{mdx.frontmatter?.words}</h1>
 
       <MDXProvider components={shortcodes}>
         <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>

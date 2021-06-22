@@ -5,14 +5,25 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    // TODO: ビルドができない不具合。解決する必要あるか検討。
+    // 'gatsby-plugin-sitemap',
+    // TODO: ビルドができない不具合。解決する必要あるか検討。
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     icon: 'static/image/icon.png',
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        icon: 'src/images/icon.png',
-      },
+      resolve: 'gatsby-plugin-mdx',
+      // options: {
+      //   extensions: ['.md', '.mdx'], //mdとmdxどちらも受け入れる
+      //   defaultLayouts: {
+      //     default: require.resolve('./src/templates/common.tsx'),
+      //   },
+      // },
     },
-    'gatsby-plugin-mdx',
+    'gatsby-plugin-mdx-frontmatter',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
