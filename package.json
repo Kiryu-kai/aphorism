@@ -38,18 +38,20 @@
   "engines": {
     "node": "14"
   },
+  "homepage": "/aphorism/",
   "keywords": [
     "gatsby"
   ],
   "private": true,
   "scripts": {
-    "build": "npm run clean && gatsby build",
+    "build": "npm run clean && gatsby build --prefix-paths",
     "clean": "gatsby clean",
-    "deploy": "npm run build && gh-pages -d public",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public",
     "develop": "gatsby develop",
+    "eslint:fix": "eslint ./ --fix",
     "serve": "gatsby serve",
     "start": "gatsby develop",
-    "eslint:fix": "eslint ./ --fix",
     "stylelint:fix": "stylelint ./src/**/*.scss --fix"
   }
 }
