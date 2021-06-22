@@ -9,7 +9,7 @@ type Component = React.FC<{
 export const SingleAphorismLink: Component = ({className}) => {
   type QueryType = {
     frontmatter: {
-      title: string
+      words: string
     }
     slug: string
   }[]
@@ -32,6 +32,6 @@ export const SingleAphorismLink: Component = ({className}) => {
   const [page] = arrayShuffle(nodes).slice(0, 1) as QueryType
 
   return (
-    <Link to={page.slug} className={className}>{page.frontmatter.title}</Link>
+    <Link to={page.slug} className={className}>{page.frontmatter.words}</Link>
   )
 }

@@ -8,7 +8,7 @@ type Component = React.FC<{
 
 type QueryType = {
   frontmatter: {
-    title: string
+    words: string
   }
   slug: string
 }[]
@@ -36,7 +36,7 @@ export const AllMdx: Component = ({max}) => {
     list.push(
       <li key={slug}>
         <Link to={slug}>
-          {frontmatter.title}
+          {frontmatter.words}
         </Link>
       </li>
     )
