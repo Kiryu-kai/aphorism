@@ -1,10 +1,10 @@
-@use "../utils/mixin.scss" as *;
+@use "../../utils/mixin.scss" as *;
 
 .primary {
 
   min-height: 520px;
   padding: 0 20px;
-  background: url("/image/index-bg.jpg");
+  background: url("/aphorism/image/index-bg.jpg");
 
   @include min-screen() {
     // position: sticky;
