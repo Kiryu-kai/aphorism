@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: '#桐生ココの格言',
   },
+  pathPrefix: '/aphorism',
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
