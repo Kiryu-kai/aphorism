@@ -20,7 +20,7 @@ export const AllMdx: Component = ({max}) => {
         allMdx {
           nodes {
             frontmatter {
-              title
+              words
             }
             slug
           }
