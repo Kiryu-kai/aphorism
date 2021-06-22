@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['*.tsx'],
       rules: {
         quotes: [
           'error',
