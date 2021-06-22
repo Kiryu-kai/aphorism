@@ -6,6 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "array-shuffle": "^2.0.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-mdx": "^2.7.1",
