@@ -44,6 +44,7 @@
   "private": true,
   "scripts": {
     "build": "npm run clean && gatsby build",
+    "preclean": "npm cache clear --force",
     "clean": "gatsby clean",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d public",
