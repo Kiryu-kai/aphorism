@@ -30,7 +30,7 @@ export default function PageTemplate({ data: { mdx } }) {
       <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
       <p>
-        <Link to="../">戻る</Link>
+        <Link to="/aphorism/">戻る</Link>
       </p>
     </div>
   )
