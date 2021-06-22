@@ -19,9 +19,6 @@
     "sass": "^1.35.1"
   },
   "devDependencies": {
-    "@graphql-codegen/typescript": "^1.22.3",
-    "@graphql-codegen/typescript-graphql-request": "^3.2.3",
-    "@graphql-codegen/typescript-operations": "^1.18.2",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
     "eslint": "^7.29.0",
@@ -45,7 +42,6 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "start": "gatsby develop",
-    "eslint:fix": "eslint ./src --fix",
-    "graphql-codegen": "npx graphql-codegen"
+    "eslint:fix": "eslint ./ --fix"
   }
 }
