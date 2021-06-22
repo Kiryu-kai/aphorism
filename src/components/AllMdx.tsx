@@ -2,9 +2,9 @@ import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import arrayShuffle from 'array-shuffle'
 
-interface AllMdxType extends React.FC {
+type AllMdxType = React.FC<{
   max?: number;
-}
+}>
 
 type QueryType = {
   frontmatter: {
