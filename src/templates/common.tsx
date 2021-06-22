@@ -14,14 +14,24 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <div>
       <Helmet>
-        <title>{mdx.frontmatter.title} | #桐生ココの格言 | 桐生会</title>
+        <title>{mdx.frontmatter.words} | #桐生ココの格言 | 桐生会</title>
       </Helmet>
 
-      <h1>{mdx.frontmatter.title}</h1>
+      <h1>{mdx.frontmatter.words}</h1>
 
       <MDXProvider components={shortcodes}>
         <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
       </MDXProvider>
+
+      <a className="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=Hello%20world"
+        data-size="large">
+      Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+
+      <p>
+        <Link to="../">戻る</Link>
+      </p>
     </div>
   )
 }
@@ -29,7 +39,7 @@ export const pageQuery = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
       frontmatter {
-        title
+        words
       }
       body
     }
