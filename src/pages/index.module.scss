@@ -45,6 +45,7 @@
 
   &__txt {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-around;
     margin: 0;
   }
@@ -60,7 +61,6 @@
     font-size: 1.6vw; // fz16pf / bp1000px * 100vw;
 
     &__txt {
-      flex-direction: row-reverse;
       justify-content: flex-end;
     }
   }
