@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import arrayShuffle from 'array-shuffle'
 
-type AllMdxType = React.FC<{
+type Component = React.FC<{
   max?: number;
 }>
 
@@ -13,7 +13,7 @@ type QueryType = {
   slug: string
 }[]
 
-export const AllMdx: AllMdxType = ({max}) => {
+export const AllMdx: Component = ({max}) => {
   const { nodes } = useStaticQuery(
     graphql`
       query {

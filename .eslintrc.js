@@ -40,9 +40,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['.eslintrc.js', 'gatsby-config.js'],
+      files: ['.eslintrc.js', 'gatsby-*.js'],
       rules: {
         'no-undef': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
     {
