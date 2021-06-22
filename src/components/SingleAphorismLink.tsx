@@ -32,6 +32,6 @@ export const SingleAphorismLink: Component = ({className}) => {
   const [page] = arrayShuffle(nodes).slice(0, 1) as QueryType
 
   return (
-    <Link to={page.slug.replace(`aphorism/`, ``)} className={className}>{page.frontmatter.words}</Link>
+    <Link to={page.slug} className={className}>{page.frontmatter.words}</Link>
   )
 }
