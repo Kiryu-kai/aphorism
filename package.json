@@ -43,7 +43,7 @@
   ],
   "private": true,
   "scripts": {
-    "build": "npm run clean && gatsby build",
+    "build": "npm run clean && gatsby build --prefix-paths",
     "preclean": "npm cache clear --force",
     "clean": "gatsby clean",
     "predeploy": "npm run build",
