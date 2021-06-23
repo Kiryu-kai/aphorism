@@ -36,7 +36,7 @@ export const AllMdx: Component = ({max}) => {
   for (const {frontmatter, slug} of aphorisms) {
     list.push(
       <li key={slug} className={styles.li}>
-        <Link to={`/aphorism/${slug}`} className={styles.a}>
+        <Link to={slug} className={styles.a}>
           {frontmatter.words}
         </Link>
       </li>
