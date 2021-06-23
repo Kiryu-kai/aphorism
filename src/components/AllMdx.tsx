@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import arrayShuffle from 'array-shuffle'
+import * as styles from './AllMdx.module.scss'
 
 type Component = React.FC<{
   max?: number;
@@ -34,8 +35,8 @@ export const AllMdx: Component = ({max}) => {
 
   for (const {frontmatter, slug} of aphorisms) {
     list.push(
-      <li key={slug}>
-        <Link to={`/aphorism/${slug}`}>
+      <li key={slug} className={styles.li}>
+        <Link to={`/aphorism/${slug}`} className={styles.a}>
           {frontmatter.words}
         </Link>
       </li>
@@ -43,7 +44,7 @@ export const AllMdx: Component = ({max}) => {
   }
 
   return (
-    <ul>
+    <ul className={styles.ul}>
       {list}
     </ul>
   )

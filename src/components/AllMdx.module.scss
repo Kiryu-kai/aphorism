@@ -1,0 +1,20 @@
+.ul {
+  padding: 0 20px;
+  list-style: none;
+}
+
+.li {
+  margin: 20px 0;
+}
+
+.a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  padding: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: inherit;
+  background: #eee;
+}

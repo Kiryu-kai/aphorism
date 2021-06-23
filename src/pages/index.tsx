@@ -5,6 +5,7 @@ import { AllMdx } from '../components/AllMdx'
 import { SingleAphorismLink } from '../components/SingleAphorismLink'
 import { useStaticQuery, graphql } from 'gatsby'
 import { use100vh } from 'react-div-100vh'
+import cocoImg from './index/index-coco.png'
 import * as styles from './index.module.scss'
 
 const IndexPage = () => {
@@ -43,7 +44,7 @@ const IndexPage = () => {
         </div>
 
         <div className={styles.coco}>
-          <img src="/aphorism/image/index-coco.png" alt="" className={styles.coco__img} />
+          <img src={cocoImg} alt="" className={styles.coco__img} />
         </div>
 
         <div className={styles.voice}>
