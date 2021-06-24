@@ -8,35 +8,46 @@ type Component = React.FC<{
 }>
 
 type QueryType = {
-  frontmatter: {
-    words: string
+  node: {
+    frontmatter: {
+      words: string
+    }
+    fields: {
+      slug: string
+    }
   }
-  slug: string
 }[]
 
 export const AllMdx: Component = ({max}) => {
-  const { nodes } = useStaticQuery(
+  const { edges } = useStaticQuery(
     graphql`
       query {
-        allMdx {
-          nodes {
-            frontmatter {
-              words
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                video
+                words
+              }
+              fields {
+                slug
+              }
             }
-            slug
           }
         }
       }
     `
-  ).allMdx
+  ).allMarkdownRemark
 
-  const aphorisms = arrayShuffle(nodes).slice(0, max ?? nodes.length) as QueryType
+  const aphorisms = arrayShuffle(edges).slice(0, max ?? edges.length) as QueryType
   const list: React.ReactNode[] = []
 
-  for (const {frontmatter, slug} of aphorisms) {
+  for (const {node} of aphorisms) {
+    const {frontmatter, fields} = node
+
     list.push(
-      <li key={slug} className={styles.li}>
-        <Link to={slug} className={styles.a}>
+      <li key={fields.slug} className={styles.li}>
+        <Link to={fields.slug} className={styles.a}>
           {frontmatter.words}
         </Link>
       </li>

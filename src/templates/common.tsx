@@ -1,27 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import { YouTube } from '../components/YouTube'
 import '../../node_modules/normalize.css/normalize.css'
 import '../common.scss'
 
-const shortcodes = { Link, YouTube } // Provide common components here
+export default function PageTemplate({ data, pageContext }) {
+  const siteTitle = data.site.siteMetadata.title
+  const aphorism = data.markdownRemark
+  const { previous, next } = pageContext
 
-export default function PageTemplate({ data: { mdx } }) {
   return (
     <div>
       <Helmet>
-        <title>{mdx.frontmatter.words} | #桐生ココの格言 | 桐生会</title>
+        <title>{aphorism.frontmatter.words} | {siteTitle}</title>
       </Helmet>
-
-      <h1>{mdx.frontmatter?.words}</h1>
-
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
-      </MDXProvider>
 
       <a className="twitter-share-button"
         href="https://twitter.com/intent/tweet?text=Hello%20world"
@@ -30,18 +24,26 @@ export default function PageTemplate({ data: { mdx } }) {
       <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
       <p>
-        <Link to="/aphorism/">戻る</Link>
+        <Link to="/">戻る</Link>
       </p>
     </div>
   )
 }
 export const pageQuery = graphql`
-  query ($id: String) {
-    mdx(id: { eq: $id }) {
+  query ($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+      fields {
+        slug
+      }
       frontmatter {
+        video
         words
       }
-      body
     }
   }
 `

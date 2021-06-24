@@ -8,30 +8,41 @@ type Component = React.FC<{
 
 export const SingleAphorismLink: Component = ({className}) => {
   type QueryType = {
-    frontmatter: {
-      words: string
+    node: {
+      frontmatter: {
+        words: string
+      }
+      fields: {
+        slug: string
+      }
     }
-    slug: string
   }[]
 
-  const { nodes } = useStaticQuery(
+  const { edges } = useStaticQuery(
     graphql`
       query {
-        allMdx {
-          nodes {
-            frontmatter {
-              words
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                video
+                words
+              }
+              fields {
+                slug
+              }
             }
-            slug
           }
         }
       }
     `
-  ).allMdx
+  ).allMarkdownRemark
 
-  const [page] = arrayShuffle(nodes).slice(0, 1) as QueryType
+  const [edge] = arrayShuffle(edges).slice(0, 1) as QueryType
+  const { node } = edge
+  const { slug } = node.fields
 
   return (
-    <Link to={page.slug} className={className}>{page.frontmatter.words}</Link>
+    <Link to={slug} className={className}>{node.frontmatter.words}</Link>
   )
 }

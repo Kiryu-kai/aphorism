@@ -16,15 +16,29 @@ module.exports = {
     //   },
     // },
     {
-      resolve: 'gatsby-plugin-mdx',
-      // options: {
-      //   extensions: ['.md', '.mdx'], //mdとmdxどちらも受け入れる
-      //   defaultLayouts: {
-      //     default: require.resolve('./src/templates/common.tsx'),
-      //   },
-      // },
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1.0725rem',
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
+      },
     },
-    'gatsby-plugin-mdx-frontmatter',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -32,6 +46,13 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'aphorism',
+        path: './content/',
+      },
     },
   ],
 }
