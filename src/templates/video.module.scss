@@ -1,0 +1,62 @@
+.wrap {
+  padding: 30px 20px;
+}
+
+.videoContainer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+
+  &__title {
+    grid-row: 3 / 4;
+  }
+
+  &__tag {
+    grid-row: 2 / 3;
+  }
+
+  &__video {
+    grid-row: 1 / 2;
+  }
+}
+
+.h1 {
+  margin: 16px 0 0;
+  font-size: 18px;
+
+  &::before {
+    content: "「";
+  }
+
+  &::after {
+    content: "」";
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 10px 0 0 -10px;
+  list-style: none;
+
+  &__item {
+    padding: 10px 0 0 10px;
+  }
+
+  &__txt {
+    display: block;
+    padding: 2px 10px;
+    font-size: 12px;
+    background: #eaeaea;
+    border-radius: 6px;
+  }
+}
+
+.sns {
+  margin: 10px 0;
+  text-align: right;
+}
+
+.markdown {
+  margin: 0 0 140px;
+}

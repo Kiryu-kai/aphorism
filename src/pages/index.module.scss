@@ -37,6 +37,18 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .description {
   padding: 0 10px;
   font-feature-settings: normal;
@@ -52,8 +64,23 @@
 
   &__row {
     display: block;
+    opacity: 0;
     writing-mode: vertical-rl;
+    animation: 2s fadeIn forwards ease-out;
+
+    &:nth-of-type(2) {
+      animation-delay: .5s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 1s;
+    }
+
+    &:nth-of-type(4) {
+      animation-delay: 1.5s;
+    }
   }
+
   @include min-screen() {
     grid-row: 1 / 2;
     grid-column: 2 / 3;

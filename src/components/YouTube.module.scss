@@ -1,8 +1,19 @@
-.wrap {
+.start {
+  margin: 0 0 8px;
+
+  &__inner {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 12px;
+    background: orange;
+    border-radius: 6px;
+  }
+}
+
+.video {
   position: relative;
   padding: 56.25% 0 0;
   // aspect-ratio: 16 / 9;
-  margin: 40px 0;
 }
 
 .iframe {
