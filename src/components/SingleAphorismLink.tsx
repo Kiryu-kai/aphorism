@@ -25,7 +25,6 @@ export const SingleAphorismLink: Component = ({className}) => {
           edges {
             node {
               frontmatter {
-                video
                 words
               }
               fields {

@@ -55,7 +55,7 @@
     "build": "npm run clean && gatsby build --prefix-paths",
     "preclean": "npm cache clear --force",
     "clean": "gatsby clean",
-    "predeploy": "npm run build && node adjust-path.js",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d public",
     "develop": "gatsby develop",
     "eslint:fix": "eslint ./ --fix",

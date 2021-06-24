@@ -1,0 +1,14 @@
+.wrap {
+  position: relative;
+  padding: 56.25% 0 0;
+  // aspect-ratio: 16 / 9;
+  margin: 40px 0;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

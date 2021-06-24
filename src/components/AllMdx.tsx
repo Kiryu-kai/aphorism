@@ -26,7 +26,6 @@ export const AllMdx: Component = ({max}) => {
           edges {
             node {
               frontmatter {
-                video
                 words
               }
               fields {

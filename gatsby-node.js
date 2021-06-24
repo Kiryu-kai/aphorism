@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             frontmatter {
-              video
+              src
               words
             }
             fields {
