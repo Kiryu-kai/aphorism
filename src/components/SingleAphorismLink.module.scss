@@ -1,0 +1,49 @@
+@use "../utils/mixin.scss" as *;
+
+.txt {
+  &::before {
+    content: "“";
+  }
+
+  &::after {
+    content: "”";
+  }
+}
+
+.more {
+  display: block;
+  margin: 20px 0 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: right;
+
+  &__inner {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 11px;
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      content: "";
+      border: solid transparent;
+      border-width: 3px 0 3px 4px;
+      border-left-color: #000;
+    }
+  }
+
+  @include min-screen() {
+    font-size: 16px;
+
+    &__inner {
+      padding-left: 14px;
+
+      &::before {
+        border-width: 6px 0 6px 7px;
+      }
+    }
+  }
+}

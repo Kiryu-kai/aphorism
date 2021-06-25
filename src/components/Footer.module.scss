@@ -1,6 +1,7 @@
 .wrap {
   position: sticky;
   bottom: 0;
+  z-index: 10;
   grid-row: 3 / 4;
   padding: 8px 20px;
   color: #fff;

@@ -1,0 +1,106 @@
+@use "../utils/mixin.scss" as *;
+
+.wrap {
+  padding: 20px;
+  @include min-screen() {
+    padding: 40px;
+  }
+}
+
+.ul {
+  padding: 0;
+  list-style: none;
+
+  @include min-screen() {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -40px 0 0 -40px;
+  }
+}
+
+.li {
+  margin: 20px 0;
+
+  @include min-screen() {
+    display: flex;
+    flex-basis: 33.3333%;
+    flex-grow: 1;
+    padding: 40px 0 0 40px;
+  }
+}
+
+.a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  padding: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: inherit;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #fff;
+
+  @include min-screen() {
+    position: relative;
+    flex-grow: 1;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+.txt {
+  &::before {
+    content: "「";
+  }
+
+  &::after {
+    content: "」";
+  }
+}
+
+.more {
+  display: block;
+  margin: 20px 0 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: right;
+
+  &__inner {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 11px;
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      content: "";
+      border: solid transparent;
+      border-width: 3px 0 3px 4px;
+      border-left-color: #000;
+    }
+  }
+
+  @include min-screen() {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 16px;
+
+    &__inner {
+      padding-left: 14px;
+
+      &::before {
+        border-width: 6px 0 6px 7px;
+      }
+    }
+  }
+}

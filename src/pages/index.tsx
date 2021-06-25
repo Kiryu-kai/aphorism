@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Layout } from '../components/layout'
 import { Helmet } from 'react-helmet'
-import { AllMdx } from '../components/AllMdx'
+import { AllMd } from '../components/AllMd'
+import { Footer } from '../components/Footer'
 import { SingleAphorismLink } from '../components/SingleAphorismLink'
 import { useStaticQuery, graphql } from 'gatsby'
 import { use100vh } from 'react-div-100vh'
@@ -53,8 +54,10 @@ const IndexPage = () => {
       </div>
 
       <div className={styles.secondary}>
-        <AllMdx />
+        <AllMd />
       </div>
+
+      <Footer />
     </Layout>
   )
 }

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import arrayShuffle from 'array-shuffle'
-import * as styles from './AllMdx.module.scss'
+import * as styles from './AllMd.module.scss'
 
 type Component = React.FC<{
   max?: number;
@@ -18,7 +18,7 @@ type QueryType = {
   }
 }[]
 
-export const AllMdx: Component = ({max}) => {
+export const AllMd: Component = ({max}) => {
   const { edges } = useStaticQuery(
     graphql`
       query {
@@ -47,15 +47,26 @@ export const AllMdx: Component = ({max}) => {
     list.push(
       <li key={fields.slug} className={styles.li}>
         <Link to={fields.slug} className={styles.a}>
-          {frontmatter.words}
+          <span>
+            <span className={styles.txt}>
+              {frontmatter.words}
+            </span>
+            <span className={styles.more}>
+              <span className={styles.more__inner}>
+                詳しく見る
+              </span>
+            </span>
+          </span>
         </Link>
       </li>
     )
   }
 
   return (
-    <ul className={styles.ul}>
-      {list}
-    </ul>
+    <div className={styles.wrap}>
+      <ul className={styles.ul}>
+        {list}
+      </ul>
+    </div>
   )
 }
