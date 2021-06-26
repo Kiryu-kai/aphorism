@@ -47,7 +47,7 @@ export const AllMd: Component = ({max}) => {
     list.push(
       <li key={fields.slug} className={styles.li}>
         <Link to={fields.slug} className={styles.a}>
-          <span>
+          <span className={styles.a__inner}>
             <span className={styles.txt}>
               {frontmatter.words}
             </span>
