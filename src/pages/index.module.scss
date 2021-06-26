@@ -1,6 +1,6 @@
 @use "../utils/mixin.scss" as *;
 
-.primary {
+.header {
   position: relative;
   padding: 0 20px;
   overflow: hidden;
@@ -32,7 +32,7 @@
   @include min-screen() {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-    padding: 25px 0 0;
+    padding: 29px 0 0;
     font-size: 5vw; // fz50px / bp1000px * 100vw
     text-align: left;
     writing-mode: vertical-lr;
@@ -151,9 +151,15 @@
     background: #ff0102;
     transform: translate(38px, 11px) rotate(38deg);
   }
+
+  @include min-screen() {
+    &__link {
+      font-size: 16px;
+    }
+  }
 }
 
-.secondary {
+.main {
   position: relative;
   z-index: 1;
   background: #fff;

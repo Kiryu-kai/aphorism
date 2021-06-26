@@ -65,6 +65,52 @@
       transition: .3s box-shadow ease-out, .3s background-color ease-out;
     }
 
+    .more {
+      display: none;
+
+      @include min-screen() {
+        position: absolute;
+        right: 20px;
+        bottom: 12px;
+        display: block;
+        margin: 20px 0 0;
+        font-family: sans-serif;
+        font-weight: normal;
+        text-align: right;
+
+        &__inner {
+          position: relative;
+          display: inline-block;
+          padding: 0 0 0 14px;
+
+          &::before,
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+          }
+
+          &::before {
+            top: 8px;
+            left: 0;
+            border: solid transparent;
+            border-width: 6px 0 6px 7px;
+            border-left-color: #000;
+          }
+
+          &::after {
+            bottom: 0;
+            left: 13px;
+            display: block;
+            width: 0;
+            height: 1px;
+            background: #000;
+            transition: .3s width ease-out;
+          }
+        }
+      }
+    }
+
     &:hover,
     &:focus {
       box-shadow: 13px 13px 26px #c2c2c2, -13px -13px 26px #fff;
@@ -73,9 +119,14 @@
         background: rgba(255, 255, 255, 0);
         box-shadow: none;
       }
+
+      .more__inner::after {
+        width: calc(100% - 13px);
+      }
     }
   }
 }
+
 
 .txt {
   &::before {
@@ -84,37 +135,5 @@
 
   &::after {
     content: "」";
-  }
-}
-
-.more {
-  display: none;
-
-  @include min-screen() {
-    position: absolute;
-    right: 20px;
-    bottom: 12px;
-    display: block;
-    margin: 20px 0 0;
-    font-family: sans-serif;
-    font-weight: normal;
-    text-align: right;
-
-    &__inner {
-      position: relative;
-      display: inline-block;
-      padding: 0 0 0 14px;
-
-      &::before {
-        position: absolute;
-        top: 8px;
-        left: 0;
-        display: block;
-        content: "";
-        border: solid transparent;
-        border-width: 6px 0 6px 7px;
-        border-left-color: #000;
-      }
-    }
   }
 }

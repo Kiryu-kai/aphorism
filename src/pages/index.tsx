@@ -3,11 +3,11 @@ import { Layout } from '../components/layout'
 import { Helmet } from 'react-helmet'
 import { AllMd } from '../components/AllMd'
 import { Footer } from '../components/Footer'
-import { SingleAphorismLink } from '../components/SingleAphorismLink'
+import { RequestBtn } from '../components/RequestBtn'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { use100vh } from 'react-div-100vh'
 import cocoImg from './index/index-coco.png'
-import primaryBg from './index/index-bg.jpg'
+import headerBg from './index/index-bg.jpg'
 import * as styles from './index.module.scss'
 
 const IndexPage = () => {
@@ -31,7 +31,7 @@ const IndexPage = () => {
         <title>{site.siteMetadata.title}</title>
       </Helmet>
 
-      <div className={styles.primary} style={{ backgroundImage: `url(${primaryBg})` }}>
+      <header className={styles.header} style={{ backgroundImage: `url(${headerBg})` }}>
         <div className={styles.mv} style={{ minHeight: height }}>
           <h1 className={styles.h1}>
             {site.siteMetadata.title}
@@ -54,13 +54,16 @@ const IndexPage = () => {
         <div className={styles.youtube}>
           <Link to="https://www.youtube.com/channel/UCS9uQI-jC3DE0L4IpXyvr6w" className={styles.youtube__link}>Coco Ch.</Link>
         </div>
-      </div>
+      </header>
 
       <div className={styles.secondary}>
-        <AllMd />
-      </div>
+        <main className={styles.main}>
+          <RequestBtn />
+          <AllMd />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </Layout>
   )
 }
