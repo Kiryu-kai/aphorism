@@ -56,7 +56,7 @@ const IndexPage = () => {
         </div>
       </header>
 
-      <div className={styles.secondary}>
+      <div className={styles.container}>
         <main className={styles.main}>
           <RequestBtn />
           <AllMd />

@@ -1,5 +1,52 @@
-.wrap {
+@use "../utils/mixin.scss" as *;
+
+.container {
   padding: 30px 20px;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.youtube {
+  margin: 40px 0;
+  text-align: center;
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: #ff0102;
+    border-radius: 6px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 23px;
+      bottom: 0;
+      display: block;
+      height: 0;
+      margin: auto 0;
+      content: "";
+      border: solid transparent;
+      border-width: 6px 0 6px 7px;
+      border-left-color: #fff;
+    }
+  }
+
+  @include min-screen() {
+    &__link {
+      &:hover,
+      &:focus {
+        opacity: .8;
+      }
+    }
+  }
 }
 
 .videoContainer {
@@ -30,6 +77,10 @@
   &::after {
     content: "」";
   }
+
+  @include min-screen() {
+    font-size: 24px;
+  }
 }
 
 .tags {
@@ -37,6 +88,7 @@
   flex-wrap: wrap;
   padding: 0;
   margin: 10px 0 0 -10px;
+  font-size: 12px;
   list-style: none;
 
   &__item {
@@ -46,9 +98,23 @@
   &__txt {
     display: block;
     padding: 2px 10px;
-    font-size: 12px;
     background: #eaeaea;
     border-radius: 6px;
+  }
+
+  @include min-screen() {
+    margin: 0 0 0 -20px;
+    font-size: 14px;
+
+    &__item {
+      padding: 20px 0 0 20px;
+    }
+
+    &__txt {
+      min-width: 60px;
+      padding: 4px 14px;
+      text-align: center;
+    }
   }
 }
 
@@ -57,6 +123,6 @@
   text-align: right;
 }
 
-.markdown {
-  margin: 0 0 140px;
+.returnBtn {
+  margin: 140px 0 0;
 }

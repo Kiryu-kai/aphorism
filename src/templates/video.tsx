@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
+import { Layout } from '../components/Layout'
 import { YouTube } from '../components/YouTube'
 import { Button } from '../components/Button'
 import { Footer } from '../components/Footer'
@@ -32,46 +33,58 @@ export default function PageTemplate({ data, pageContext }) {
   })()
 
   return (
-    <>
-      <main className={styles.wrap}>
-        <Helmet>
-          <title>{frontmatter.words} | {siteTitle}</title>
-          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-        </Helmet>
+    <Layout>
+      <Helmet>
+        <title>{frontmatter.words} | {siteTitle}</title>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+      </Helmet>
 
-        <div className={styles.videoContainer}>
-          <div className={styles.videoContainer__title}>
-            <h1 className={styles.h1}>{frontmatter.words}</h1>
+      <main className={styles.container}>
+        <div className={styles.inner}>
+          <div className={styles.videoContainer}>
+            <div className={styles.videoContainer__title}>
+              <h1 className={styles.h1}>{frontmatter.words}</h1>
+            </div>
+
+            <div className={styles.videoContainer__tag}>
+              {list}
+            </div>
+
+            <div className={styles.videoContainer__video}>
+              <YouTube src={frontmatter.src} width={frontmatter.width} height={frontmatter.height} />
+            </div>
           </div>
 
-          <div className={styles.videoContainer__tag}>
-            {list}
+          <div className={styles.sns}>
+            <a
+              className="twitter-share-button"
+              href="https://twitter.com/intent/tweet"
+              data-url={frontmatter.src}
+              data-text={`桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`}
+              data-hashtags="桐生ココの格言"
+              data-size="large">Tweet #桐生ココの格言</a>
           </div>
 
-          <div className={styles.videoContainer__video}>
-            <YouTube src={frontmatter.src} width={frontmatter.width} height={frontmatter.height} />
+          <div className={styles.youtube}>
+            <a href={frontmatter.src} className={styles.youtube__link}>YouTubeで見る</a>
           </div>
+
+          {
+            page.html ? (
+              <div className={styles.markdown}>
+                <div dangerouslySetInnerHTML={{ __html: page.html }}></div>
+              </div>
+            ) : ``
+          }
+
+          <p className={styles.returnBtn}>
+            <Button src="/">戻る</Button>
+          </p>
         </div>
-
-        <div className={styles.sns}>
-          <a
-            className="twitter-share-button"
-            href={`https://twitter.com/intent/tweet?text=「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`}」 #桐生ココの格言`}
-            data-size="large">Tweet #桐生ココの格言</a>
-        </div>
-
-        <div className={styles.markdown}>
-          <div dangerouslySetInnerHTML={{ __html: page.html }}></div>
-        </div>
-
-
-        <p>
-          <Button src="/">戻る</Button>
-        </p>
       </main>
 
       <Footer />
-    </>
+    </Layout>
   )
 }
 export const pageQuery = graphql`
