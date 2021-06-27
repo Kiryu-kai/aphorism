@@ -14,7 +14,7 @@ export default function PageTemplate({ data, pageContext }) {
   const  { frontmatter } = page
   const { previous, next } = pageContext
   const list = frontmatter.tags.length && (() => {
-    const items: React.ReactNode[] = [];
+    const items: React.ReactNode[] = []
 
     for (const tag of frontmatter.tags) {
       items.push(

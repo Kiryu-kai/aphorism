@@ -58,9 +58,12 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d public",
     "develop": "gatsby develop",
+    "eslint": "eslint ./",
     "eslint:fix": "eslint ./ --fix",
     "serve": "gatsby serve",
     "start": "gatsby develop",
-    "stylelint:fix": "stylelint ./src/**/*.scss --fix"
+    "stylelint": "stylelint ./src/**/*.scss",
+    "stylelint:fix": "stylelint ./src/**/*.scss --fix",
+    "test": "npm run stylelint && npm run eslint"
   }
 }
