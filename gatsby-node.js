@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     items, // An array of objects
     itemsPerPage: 1, // How many items you want per page
     pathPrefix: ({ idx }) => (idx === 0 ? '/' : '/pages'), // Creates pages like `/page`, `/page/2`, etc
-    component: path.resolve('src/templates/Pager.tsx'), // Just like `createPage()`
+    component: path.resolve('src/templates/pager.tsx'), // Just like `createPage()`
   })
 
   // you'll call `createPage` for each result
