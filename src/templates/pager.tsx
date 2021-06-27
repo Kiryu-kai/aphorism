@@ -1,30 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
+import { Header } from '../components/Header'
 import { Layout } from '../components/Layout'
+import { Footer } from '../components/Footer'
 import '../../node_modules/normalize.css/normalize.css'
 import '../common.scss'
 import { Pager } from "../components/Pager"
 import { AllMd } from "../components/AllMd"
-// import * as styles from './video.module.scss'
+import { use100vh } from 'react-div-100vh'
+import * as styles from './pager.module.scss'
 
 export default function IndexPage({ data, pageContext }) {
   const siteTitle = data.site.siteMetadata.title
+  const height = use100vh()
   // const { previous, next } = pageContext
 
   return (
     <Layout>
       <Helmet>
-        <title>{`${pageContext.pageNumber}ページ目 | `}{siteTitle}</title>
+        <title>{`${pageContext.pageNumber + 1}ページ目 | `}{siteTitle}</title>
       </Helmet>
 
-      <p>
-        {JSON.stringify(pageContext)}
-      </p>
+      <Header />
 
-      <AllMd start={pageContext.pageNumber} />
+      <main className={styles.container} style={{ minHeight: height }}>
+        <div className={styles.inner}>
+          <AllMd start={pageContext.pageNumber} />
+          <Pager pageContext={pageContext} />
+        </div>
+      </main>
 
-      <Pager pageContext={pageContext} />
+      <Footer />
     </Layout>
   )
 }

@@ -3,12 +3,13 @@ import { navigate } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import { Pagination } from "@material-ui/lab"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: `flex`,
     flexWrap: `wrap`,
     justifyContent: `center`,
     alignItems: `center`,
+    margin: `40px 0`,
   },
 }))
 
@@ -17,15 +18,15 @@ export const Pager = ({ pageContext }) => {
   const { numberOfPages, humanPageNumber } = pageContext
 
   const handleChange = (event, value) => {
-    value === 1 ? navigate(`/`) : navigate(`/page/${value}`)
+    value === 1 ? navigate(`/`) : navigate(`/pages/${value}`)
   }
   return (
     <div className={classes.root}>
       <Pagination
-        size="small"
+        size="large"
+        shape="rounded"
         defaultPage={humanPageNumber}
         count={numberOfPages}
-        color="primary"
         onChange={handleChange}
       />
     </div>
