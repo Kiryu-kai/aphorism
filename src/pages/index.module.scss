@@ -159,10 +159,14 @@
   }
 }
 
+.container {
+  background: #fff;
+}
+
 .main {
   position: relative;
   z-index: 1;
-  background: #fff;
+  overflow: hidden;
 
   @include min-screen() {
     max-width: 1280px;

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { YouTube } from '../components/YouTube'
 import { Button } from '../components/Button'
+import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import '../../node_modules/normalize.css/normalize.css'
 import '../common.scss'
@@ -38,6 +39,8 @@ export default function PageTemplate({ data, pageContext }) {
         <title>{frontmatter.words} | {siteTitle}</title>
         <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Helmet>
+
+      <Header />
 
       <main className={styles.container}>
         <div className={styles.inner}>
