@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import { Helmet } from 'react-helmet'
 import { AllMd } from '../components/AllMd'
 import { Footer } from '../components/Footer'
