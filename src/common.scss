@@ -1,3 +1,5 @@
+@use "./utils/mixin.scss" as *;
+
 *,
 *::before,
 *::after {
@@ -20,4 +22,10 @@ body {
 
 small {
   font-size: 100%;
+}
+
+a {
+  @include min-screen() {
+    cursor: inherit;
+  }
 }
