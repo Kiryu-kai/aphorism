@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import arrayShuffle from 'array-shuffle'
+import { KokoaIcon } from './KokoaIcon'
 import * as styles from './AllMd.module.scss'
 
 type Component = React.FC<{
@@ -11,6 +12,7 @@ type QueryType = {
   node: {
     frontmatter: {
       words: string
+      model: string
     }
     fields: {
       slug: string
@@ -27,6 +29,7 @@ export const AllMd: Component = ({max}) => {
             node {
               frontmatter {
                 words
+                model
               }
               fields {
                 slug
@@ -48,6 +51,14 @@ export const AllMd: Component = ({max}) => {
       <li key={fields.slug} className={styles.li}>
         <Link to={fields.slug} className={styles.a}>
           <span className={styles.a__inner}>
+            <span className={styles.icon}>
+              <KokoaIcon
+                model={frontmatter.model}
+                className={styles.icon__img}
+                width={42}
+                height={48}
+              />
+            </span>
             <span className={styles.txt}>
               {frontmatter.words}
             </span>

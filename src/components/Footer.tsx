@@ -20,12 +20,12 @@ export function Footer() {
   return (
     <footer className={styles.wrap}>
       <p className={styles.copyright}>
-        <small>©︎ 2019 Coco Kiryu - <button type="button" className={styles.btn} onClick={onclick} aria-expanded={isExpanded}>Inspired</button> - <a href="https://github.com/Kiryu-kai/aphorism">Repository</a></small>
+        <small>©︎ 2019 Coco Kiryu - <button type="button" className={styles.btn} onClick={onclick} aria-expanded={isExpanded}>Inspired &amp; Materials</button> - <a href="https://github.com/Kiryu-kai/aphorism">Repository</a></small>
       </p>
 
       <div className={styles.inspired} hidden={!isExpanded}>
         <div className={styles.inspired__inner} onClick={stopPropagetion}>
-          <h2 className={styles.inspired__hdg}>Inspired by</h2>
+          <h2 className={styles.inspired__hdg}>Inspired &amp; Materrials</h2>
 
           <p className={styles.inspired__p}>
             The collaborators are different for each directory.
@@ -37,13 +37,21 @@ export function Footer() {
 
           <ul className={styles.inspired__ul}>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/kiryucoco/status/1218277670040956928">桐生ココ🐉 (@kiryucoco) - Twitter</a>
-            </li>
-            <li className={styles.inspired__li}>
               <a href="https://twitter.com/ragnaSUS">UNこの悪魔ラグナ🐉［雪民］(レ)(@ragnaSUS) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
               <a href="https://twitter.com/rome0504/status/1407185429242122244">ローマ・アビュース🐉(@rome0504) - Twitter</a>
+            </li>
+          </ul>
+
+          <p>This page is supported by the following works.</p>
+
+          <ul className={styles.inspired__ul}>
+            <li className={styles.inspired__li}>
+              <a href="https://twitter.com/kiryucoco/status/1218277670040956928">桐生ココ🐉 (@kiryucoco) - Twitter</a>
+            </li>
+            <li className={styles.inspired__li}>
+              <a href="https://twitter.com/kokoa_m0901/status/1409028882385174531">森永 茲亜(ココア)(@kokoa_m0901) - Twitter</a>
             </li>
           </ul>
         </div>
