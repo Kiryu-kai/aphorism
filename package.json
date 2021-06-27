@@ -61,8 +61,6 @@
     "develop": "gatsby develop",
     "eslint": "eslint ./",
     "eslint:fix": "eslint ./ --fix",
-    "i": "npm install",
-    "install": "npm ci",
     "lint": "npm run stylelint && npm run eslint",
     "preclean": "npm cache clear --force",
     "predeploy": "npm run build",
