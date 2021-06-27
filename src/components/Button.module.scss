@@ -1,3 +1,5 @@
+@use "../utils/mixin.scss" as *;
+
 .button {
   display: inline-block;
   min-width: 160px;
@@ -9,4 +11,12 @@
   text-decoration: none;
   background: #333;
   border-radius: 50px;
+
+  @include min-screen() {
+    &:hover,
+    &:focus {
+      color: #fff;
+      opacity: .8;
+    }
+  }
 }

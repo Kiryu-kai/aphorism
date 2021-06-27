@@ -1,3 +1,5 @@
+@use "../utils/mixin.scss" as *;
+
 .header {
   display: flex;
   align-items: center;
@@ -35,5 +37,15 @@
     border: 3px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #ff0102;
+  }
+
+  @include min-screen() {
+    &__link {
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        opacity: .8;
+      }
+    }
   }
 }

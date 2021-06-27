@@ -115,8 +115,8 @@
           display: block;
           width: 0;
           height: 1px;
-          opacity: .5;
           background: #3c1818;
+          opacity: .5;
           transition: .3s width ease-out;
         }
       }
@@ -138,6 +138,7 @@
 
     &:hover,
     &:focus {
+      color: inherit;
       box-shadow: 13px 13px 26px #c2c2c2, -13px -13px 26px #fff;
 
       .a__inner {

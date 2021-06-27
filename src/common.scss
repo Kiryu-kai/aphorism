@@ -26,7 +26,14 @@ small {
 }
 
 a {
+  color: inherit;
+
   @include min-screen() {
     cursor: inherit;
+
+    &:hover,
+    &:focus {
+      color: #e88b00;
+    }
   }
 }
