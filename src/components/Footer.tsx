@@ -36,7 +36,7 @@ export function Footer() {
           </p>
 
           <ul className={styles.inspired__ul}>
-            <li className={styles.material__li}>
+            <li className={styles.inspired__li}>
               <a href="https://twitter.com/kiryucoco/status/1218277670040956928">桐生ココ🐉 (@kiryucoco) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
