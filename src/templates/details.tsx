@@ -3,12 +3,11 @@ import { graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { YouTube } from '../components/YouTube'
-import { Button } from '../components/Button'
+import { ReturnBtn } from '../components/ReturnBtn'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import '../../node_modules/normalize.css/normalize.css'
 import '../common.scss'
-import * as styles from './video.module.scss'
+import * as styles from './details.module.scss'
 
 export default function PageTemplate({ data, pageContext }) {
   const siteTitle = data.site.siteMetadata.title
@@ -32,6 +31,7 @@ export default function PageTemplate({ data, pageContext }) {
       <ul className={styles.tags}>{items}</ul>
     )
   })()
+  const videoId = frontmatter.src.replace(`https://youtu.be/`, ``).replace(/\?t=.*/, ``)
 
   return (
     <Layout>
@@ -64,7 +64,7 @@ export default function PageTemplate({ data, pageContext }) {
               href="https://twitter.com/intent/tweet"
               data-url={frontmatter.src}
               data-text={`桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`}
-              data-hashtags="桐生ココの格言"
+              data-hashtags={`桐生ココの格言,${videoId}`}
               data-size="large">Tweet #桐生ココの格言</a>
           </div>
 
@@ -81,7 +81,7 @@ export default function PageTemplate({ data, pageContext }) {
           }
 
           <p className={styles.returnBtn}>
-            <Button src="/">戻る</Button>
+            <ReturnBtn src="/">戻る</ReturnBtn>
           </p>
         </div>
       </main>

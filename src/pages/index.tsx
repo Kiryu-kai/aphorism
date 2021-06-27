@@ -11,12 +11,19 @@ import headerBg from './index/index-bg.jpg'
 import * as styles from './index.module.scss'
 
 const IndexPage = () => {
-  const { site } = useStaticQuery(
+  const { site, allMarkdownRemark } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+          }
+        }
+        allMarkdownRemark {
+          edges {
+            node {
+              id
+            }
           }
         }
       }
@@ -60,6 +67,12 @@ const IndexPage = () => {
         <main className={styles.main}>
           <RequestBtn />
           <AllMd />
+          {
+            allMarkdownRemark.edges.length > 30 ?
+              (
+                <Link to='/pages/2'>もっと見る</Link>
+              ) : ``
+          }
         </main>
 
         <Footer />

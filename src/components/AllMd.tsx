@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import arrayShuffle from 'array-shuffle'
+// import arrayShuffle from 'array-shuffle'
 import { KokoaIcon } from './KokoaIcon'
 import * as styles from './AllMd.module.scss'
 
 type Component = React.FC<{
+  start?: number;
   max?: number;
 }>
 
@@ -20,7 +21,7 @@ type QueryType = {
   }
 }[]
 
-export const AllMd: Component = ({max}) => {
+export const AllMd: Component = ({max, start}) => {
   const { edges } = useStaticQuery(
     graphql`
       query {
@@ -41,7 +42,11 @@ export const AllMd: Component = ({max}) => {
     `
   ).allMarkdownRemark
 
-  const aphorisms = arrayShuffle(edges).slice(0, max ?? edges.length) as QueryType
+  const _start = (start ?? 0)
+  const _max = (max ?? 30)
+  const begin = _start * _max
+  const end = (_max * (_start + 1))
+  const aphorisms = edges.slice(begin, end) as QueryType
   const list: React.ReactNode[] = []
 
   for (const {node} of aphorisms) {
@@ -75,7 +80,7 @@ export const AllMd: Component = ({max}) => {
 
   return (
     <div className={styles.wrap}>
-      <ul className={styles.ul}>
+      <ul className={styles.ul} data-hoge={edges.length} data-start={begin} data-end={end}>
         {list}
       </ul>
     </div>
