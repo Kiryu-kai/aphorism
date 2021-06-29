@@ -43,7 +43,7 @@ export const AllMd: Component = ({max, start}) => {
   ).allMarkdownRemark
 
   const _start = (start ?? 0)
-  const _max = (max ?? 30)
+  const _max = (max ?? 30) // templates/pager.tsx に 30 が直接書かれてます
   const begin = _start * _max
   const end = (_max * (_start + 1))
   const aphorisms = edges.slice(begin, end) as QueryType

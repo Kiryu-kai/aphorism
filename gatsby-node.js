@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   paginate({
     createPage, // The Gatsby `createPage` function
     items, // An array of objects
-    itemsPerPage: 1, // How many items you want per page
+    itemsPerPage: 30, // AllMd.tsx のデフォルト値
     pathPrefix: ({ idx }) => (idx === 0 ? '/' : '/pages'), // Creates pages like `/page`, `/page/2`, etc
     component: path.resolve('./src/templates/pager.tsx'), // Just like `createPage()`
   })
