@@ -69,10 +69,6 @@ export default function PageTemplate({ data, pageContext }) {
               data-size="large">Tweet #桐生ココの格言</a>
           </div>
 
-          <div className={styles.youtube}>
-            <a href={src} className={styles.youtube__link}>YouTubeで見る</a>
-          </div>
-
           {
             page.html ? (
               <div className={styles.markdown}>

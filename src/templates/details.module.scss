@@ -9,47 +9,6 @@
   margin: 0 auto;
 }
 
-.youtube {
-  margin: 40px 0;
-  text-align: center;
-
-  &__link {
-    position: relative;
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    background: #ff0102;
-    border-radius: 6px;
-
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 23px;
-      bottom: 0;
-      display: block;
-      height: 0;
-      margin: auto 0;
-      content: "";
-      border: solid transparent;
-      border-width: 6px 0 6px 7px;
-      border-left-color: #fff;
-    }
-  }
-
-  @include min-screen() {
-    &__link {
-      &:hover,
-      &:focus {
-        color: #fff;
-        opacity: .8;
-      }
-    }
-  }
-}
-
 .videoContainer {
   display: grid;
   grid-template-rows: auto auto auto;

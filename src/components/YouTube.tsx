@@ -37,6 +37,10 @@ export const YouTube: Component  = ({ src, width, height }) => {
           allowFullScreen
           className={styles.iframe}></iframe>
       </div>
+
+      <div className={styles.btn}>
+        <a href={src} className={styles.btn__link}>YouTubeで見る</a>
+      </div>
     </div>
   )
 }
