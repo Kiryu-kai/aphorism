@@ -48,7 +48,7 @@ export default function PageTemplate({ data, pageContext }) {
         <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism/`} />
         <meta property="og:title" content={`「${frontmatter.words}」 | ${siteTitle}`} />
         <meta property="og:description" content="心に残った一言。大切にしている言葉。人生観を変えた一瞬。たつのこたちの心に染み渡る、そんな数々の名シーンを紹介します。" />
-        <meta property="og:image" content={ogp} />
+        <meta property="og:image" content={`https://kiryu-kai.github.io${ogp}`} />
         <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Helmet>
 
