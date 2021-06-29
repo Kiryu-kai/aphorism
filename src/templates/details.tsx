@@ -38,7 +38,7 @@ export default function PageTemplate({ data, pageContext }) {
 
   useEffect(() => {
     // @ts-ignore
-    window.twttr.widgets.load()
+    window?.twttr?.widgets.load()
   })
 
   return (
