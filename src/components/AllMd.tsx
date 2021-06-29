@@ -25,7 +25,9 @@ export const AllMd: Component = ({max, start}) => {
   const { edges } = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          sort: {fields: frontmatter___kana, order: ASC}
+        ) {
           edges {
             node {
               frontmatter {
@@ -65,7 +67,9 @@ export const AllMd: Component = ({max, start}) => {
               />
             </span>
             <span className={styles.txt}>
-              {frontmatter.words}
+              <span className={styles.txt__inner}>
+                {frontmatter.words}
+              </span>
             </span>
             <span className={styles.more}>
               <span className={styles.more__inner}>

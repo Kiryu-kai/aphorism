@@ -27,6 +27,7 @@
     flex-basis: 33.3333%;
     flex-grow: 1;
     padding: 40px 0 0 40px;
+    margin: 0;
   }
 }
 
@@ -40,7 +41,6 @@
   &__inner {
     display: flex;
     align-items: center;
-    justify-content: center;
     min-height: 130px;
     padding: 20px;
     border-radius: 6px;
@@ -49,6 +49,22 @@
 
   .more {
     display: none;
+  }
+
+  .txt {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+
+    &__inner {
+      &::before {
+        content: "「";
+      }
+
+      &::after {
+        content: "」";
+      }
+    }
   }
 
   .icon {
@@ -151,16 +167,5 @@
         width: calc(100% - 7px);
       }
     }
-  }
-}
-
-
-.txt {
-  &::before {
-    content: "「";
-  }
-
-  &::after {
-    content: "」";
   }
 }
