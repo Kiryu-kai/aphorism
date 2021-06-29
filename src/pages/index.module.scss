@@ -146,15 +146,28 @@
     display: block;
     padding: 4px 40px;
     font-size: 12px;
+    cursor: inherit;
     color: #fff;
     text-decoration: none;
     background: #ff0102;
-    transform: translate(38px, 11px) rotate(38deg);
+    transform: translate(65px, -30px) rotate(38deg);
+    transform-origin: 0 0 0;
   }
 
   @include min-screen() {
     &__link {
       font-size: 16px;
+      transition: .2s padding ease-out, .2s transform ease-out;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        padding: 40px 100px;
+        color: #fff;
+        transform: translate(160px, -95px) rotate(38deg);
+        backface-visibility: hidden;
+      }
+
     }
   }
 }
