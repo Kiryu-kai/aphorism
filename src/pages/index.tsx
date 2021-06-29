@@ -14,6 +14,7 @@ import headerBg from './index/index-bg.jpg'
 import ogp from '../images/ogp.png'
 import * as styles from './index.module.scss'
 
+const mv = shuffle([cocoImg, cocoImg02, cocoImg03])[0]
 const IndexPage = () => {
   const { site, allMarkdownRemark } = useStaticQuery(
     graphql`
@@ -35,7 +36,6 @@ const IndexPage = () => {
   )
 
   const height = use100vh()
-  const mv = shuffle([cocoImg, cocoImg02, cocoImg03])[0]
 
   return (
     <Layout>
