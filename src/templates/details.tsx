@@ -6,6 +6,7 @@ import { YouTube } from '../components/YouTube'
 import { ReturnBtn } from '../components/ReturnBtn'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
+import { PrevNextLink } from '../components/PrevNextLink'
 import '../common.scss'
 import * as styles from './details.module.scss'
 
@@ -76,6 +77,8 @@ export default function PageTemplate({ data, pageContext }) {
               </div>
             ) : ``
           }
+
+          <PrevNextLink previous={previous} next={next} />
 
           <p className={styles.returnBtn}>
             <ReturnBtn src="/">戻る</ReturnBtn>
