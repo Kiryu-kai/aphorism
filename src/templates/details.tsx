@@ -72,9 +72,7 @@ export default function PageTemplate({ data, pageContext }) {
 
           {
             page.html ? (
-              <div className={styles.markdown}>
-                <div dangerouslySetInnerHTML={{ __html: page.html }}></div>
-              </div>
+              <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: page.html }}></div>
             ) : ``
           }
 

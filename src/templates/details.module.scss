@@ -84,6 +84,33 @@
   text-align: right;
 }
 
+.markdown {
+  padding: 20px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #fff;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  [class*="twitter-tweet"] {
+    margin: 40px 0 0 !important;
+  }
+
+  @include min-screen() {
+    padding: 40px;
+
+    [class*="twitter-tweet"] {
+      margin: 100px 0 0 !important;
+    }
+  }
+}
+
 .returnBtn {
   margin: 140px 0 0;
   text-align: center;
