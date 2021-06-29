@@ -9,6 +9,7 @@ import '../common.scss'
 import { Pager } from "../components/Pager"
 import { AllMd } from "../components/AllMd"
 import { use100vh } from 'react-div-100vh'
+import ogp from '../images/ogp.png'
 import * as styles from './pager.module.scss'
 
 export default function IndexPage({ data, pageContext }) {
@@ -20,6 +21,10 @@ export default function IndexPage({ data, pageContext }) {
     <Layout>
       <Helmet>
         <title>{`${pageContext.pageNumber + 1}ページ目 | `}{siteTitle}</title>
+        <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism/pages/${pageContext.pageNumber}`} />
+        <meta property="og:title" content={`${pageContext.pageNumber + 1}ページ目 | ${siteTitle}`} />
+        <meta property="og:description" content="心に残った一言。大切にしている言葉。人生観を変えた一瞬。たつのこたちの心に染み渡る、そんな数々の名シーンを紹介します。" />
+        <meta property="og:image" content={ogp} />
       </Helmet>
 
       <Header />

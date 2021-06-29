@@ -8,6 +8,7 @@ import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { PrevNextLink } from '../components/PrevNextLink'
 import '../common.scss'
+import ogp from '../images/ogp.png'
 import * as styles from './details.module.scss'
 
 export default function PageTemplate({ data, pageContext }) {
@@ -43,7 +44,11 @@ export default function PageTemplate({ data, pageContext }) {
   return (
     <Layout>
       <Helmet>
-        <title>{frontmatter.words} | {siteTitle}</title>
+        <title>「{frontmatter.words}」 | {siteTitle}</title>
+        <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism/`} />
+        <meta property="og:title" content={`「${frontmatter.words}」 | ${siteTitle}`} />
+        <meta property="og:description" content="心に残った一言。大切にしている言葉。人生観を変えた一瞬。たつのこたちの心に染み渡る、そんな数々の名シーンを紹介します。" />
+        <meta property="og:image" content={ogp} />
         <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Helmet>
 

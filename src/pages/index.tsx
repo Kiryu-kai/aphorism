@@ -8,6 +8,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import { use100vh } from 'react-div-100vh'
 import cocoImg from './index/index-coco.png'
 import headerBg from './index/index-bg.jpg'
+import ogp from '../images/ogp.png'
 import * as styles from './index.module.scss'
 
 const IndexPage = () => {
@@ -36,6 +37,10 @@ const IndexPage = () => {
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
+        <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism/`} />
+        <meta property="og:title" content={site.siteMetadata.title} />
+        <meta property="og:description" content="心に残った一言。大切にしている言葉。人生観を変えた一瞬。たつのこたちの心に染み渡る、そんな数々の名シーンを紹介します。" />
+        <meta property="og:image" content={ogp} />
       </Helmet>
 
       <header className={styles.header} style={{ backgroundImage: `url(${headerBg})` }}>
