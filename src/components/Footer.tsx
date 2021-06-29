@@ -53,6 +53,9 @@ export function Footer() {
             <li className={styles.inspired__li}>
               <a href="https://twitter.com/kokoa_m0901/status/1409028882385174531">森永 茲亜(ココア)(@kokoa_m0901) - Twitter</a>
             </li>
+            <li className={styles.inspired__li}>
+              <a href="https://pixelbuddha.net/textures/paper-textures-kit">PAPER TEXTURES KIT - Pixelbuddha</a>
+            </li>
           </ul>
         </div>
       </div>
