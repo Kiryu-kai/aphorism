@@ -43,7 +43,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: {fields: frontmatter___src, order: DESC}
+      sort: {fields: frontmatter___kana, order: DESC}
       skip: $skip
       limit: $limit
     ) {

@@ -12,7 +12,9 @@ import * as styles from './details.module.scss'
 export default function PageTemplate({ data, pageContext }) {
   const siteTitle = data.site.siteMetadata.title
   const page = data.markdownRemark
-  const  { frontmatter } = page
+  const  { frontmatter, fields } = page
+  const [videoId, timestamp] = fields.slug.replace(/\//g, ``).split(`.`)
+  const src = `https://youtu.be/${videoId}?t=${timestamp}`
   const { previous, next } = pageContext
   const list = frontmatter.tags.length && (() => {
     const items: React.ReactNode[] = []
@@ -31,7 +33,6 @@ export default function PageTemplate({ data, pageContext }) {
       <ul className={styles.tags}>{items}</ul>
     )
   })()
-  const videoId = frontmatter.src.replace(`https://youtu.be/`, ``).replace(/\?t=.*/, ``)
 
   return (
     <Layout>
@@ -54,7 +55,7 @@ export default function PageTemplate({ data, pageContext }) {
             </div>
 
             <div className={styles.videoContainer__video}>
-              <YouTube src={frontmatter.src} width={frontmatter.width} height={frontmatter.height} />
+              <YouTube src={src} width={frontmatter.width} height={frontmatter.height} />
             </div>
           </div>
 
@@ -62,14 +63,14 @@ export default function PageTemplate({ data, pageContext }) {
             <a
               className="twitter-share-button"
               href="https://twitter.com/intent/tweet"
-              data-url={frontmatter.src}
+              data-url={src}
               data-text={`桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`}
               data-hashtags={`桐生ココの格言,${videoId}`}
               data-size="large">Tweet #桐生ココの格言</a>
           </div>
 
           <div className={styles.youtube}>
-            <a href={frontmatter.src} className={styles.youtube__link}>YouTubeで見る</a>
+            <a href={src} className={styles.youtube__link}>YouTubeで見る</a>
           </div>
 
           {
@@ -99,7 +100,6 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: {slug: {eq: $slug}}) {
       frontmatter {
-        src
         words
         tags
       }
