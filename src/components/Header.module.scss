@@ -1,12 +1,17 @@
 @use "../utils/mixin.scss" as *;
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 8px 20px;
   background: #efeeee;
   box-shadow: 5px 5px 10px #dcdbdb, -5px -5px 10px #fff;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .h1 {
