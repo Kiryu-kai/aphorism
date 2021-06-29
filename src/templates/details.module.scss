@@ -98,15 +98,15 @@
     font-size: 20px;
   }
 
-  [class*="twitter-tweet"] {
-    margin: 40px 0 0 !important;
+  [class*="twitter-tweet"]:not(:first-child) {
+    margin: 40px 0 0 !important; // stylelint-disable-line
   }
 
   @include min-screen() {
     padding: 40px;
 
-    [class*="twitter-tweet"] {
-      margin: 100px 0 0 !important;
+    [class*="twitter-tweet"]:not(:first-child) {
+      margin: 100px 0 0 !important; // stylelint-disable-line
     }
   }
 }
