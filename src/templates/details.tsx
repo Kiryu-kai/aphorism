@@ -35,6 +35,10 @@ export default function PageTemplate({ data, pageContext }) {
       <ul className={styles.tags}>{items}</ul>
     )
   })()
+  const shareBtn = {
+    hash: `${videoId}__${timestamp}`,
+    text: `桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`,
+  }
 
   useEffect(() => {
     // @ts-ignore
@@ -45,7 +49,7 @@ export default function PageTemplate({ data, pageContext }) {
     <Layout>
       <Helmet>
         <title>「{frontmatter.words}」 | {siteTitle}</title>
-        <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism/`} />
+        <meta property="og:url" content={`https://kiryu-kai.github.io/aphorism${fields.slug}`} />
         <meta property="og:title" content={`「${frontmatter.words}」 | ${siteTitle}`} />
         <meta property="og:description" content="心に残った一言。大切にしている言葉。人生観を変えた一瞬。たつのこたちの心に染み渡る、そんな数々の名シーンを紹介します。" />
         <meta property="og:image" content={`https://kiryu-kai.github.io${ogp}`} />
@@ -70,14 +74,29 @@ export default function PageTemplate({ data, pageContext }) {
             </div>
           </div>
 
-          <div className={styles.sns}>
-            <a
-              className="twitter-share-button"
-              href={`https://twitter.com/intent/tweet?url=${src}&hashtags=桐生ココの格言,${videoId}__${timestamp}`}
-              data-text={`桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`}
-              data-hashtags={`桐生ココの格言,${videoId}`}
-              data-size="large">Tweet #桐生ココの格言</a>
-          </div>
+          <dl className={styles.sns}>
+            <div className={styles.sns__item}>
+              <dt className={styles.sns__title}>元動画をシェアする</dt>
+              <dd className={styles.sns__btn}>
+                <a
+                  className="twitter-share-button"
+                  href={`https://twitter.com/intent/tweet?url=${src.replace(`?`, `%3F`)}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                  data-text={shareBtn.text}
+                  data-size="large">Twitter #桐生ココの格言</a>
+              </dd>
+            </div>
+
+            <div className={styles.sns__item}>
+              <dt className={styles.sns__title}>このページをシェアする</dt>
+              <dd className={styles.sns__btn}>
+                <a
+                  className="twitter-share-button"
+                  href={`https://twitter.com/intent/tweet?url=${`https://kiryu-kai.github.io/aphorism${fields.slug}`}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                  data-text={shareBtn.text}
+                  data-size="large">Twitter #桐生ココの格言</a>
+              </dd>
+            </div>
+          </dl>
 
           {
             page.html ? (
