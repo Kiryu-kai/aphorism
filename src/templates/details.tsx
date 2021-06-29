@@ -23,7 +23,7 @@ export default function PageTemplate({ data, pageContext }) {
 
     for (const tag of frontmatter.tags) {
       items.push(
-        <li className={styles.tags__item}>
+        <li className={styles.tags__item} key={tag}>
           <span className={styles.tags__txt}>
             {tag}
           </span>
