@@ -27,11 +27,11 @@
 }
 
 .h1 {
-  margin: 16px 0 0;
-  font-size: 18px;
+  margin: 20px 0 30px;
+  font-size: 20px;
 
   &::before {
-    content: "「";
+    content: "🐉 「";
   }
 
   &::after {
@@ -39,7 +39,8 @@
   }
 
   @include min-screen() {
-    font-size: 24px;
+    margin-bottom: 80px;
+    font-size: 28px;
   }
 }
 
@@ -80,8 +81,35 @@
 }
 
 .sns {
-  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0 0 10px;
+  font-size: 12px;
   text-align: right;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 0 0;
+
+    + .sns__item {
+      margin-left: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 8px 0 0;
+  }
+
+  &__btn {
+    margin: 0;
+
+    iframe {
+      display: block;
+    }
+  }
 }
 
 .markdown {
@@ -95,7 +123,7 @@
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   [class*="twitter-tweet"]:not(:first-child) {
@@ -104,6 +132,10 @@
 
   @include min-screen() {
     padding: 40px;
+
+    h2 {
+      font-size: 20px;
+    }
 
     [class*="twitter-tweet"]:not(:first-child) {
       margin: 100px 0 0 !important; // stylelint-disable-line

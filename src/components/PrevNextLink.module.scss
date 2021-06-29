@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 100px;
     margin-bottom: 140px;
   }
 }
@@ -15,7 +16,7 @@
   display: block;
   padding: 15px 40px;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -26,6 +27,8 @@
   border-radius: 6px;
 
   @include min-screen() {
+    font-size: 20px;
+
     &:hover,
     &:focus {
       color: #fff;
@@ -37,8 +40,11 @@
 .previous,
 .next {
   flex-grow: 1;
-  max-width: 45%;
   margin: 0;
+
+  @include min-screen() {
+    max-width: 45%;
+  }
 }
 
 .previous {
@@ -52,11 +58,17 @@
     margin: 0 0 0 auto;
   }
 
-  &:first-child {
-    max-width: 100%;
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
 
-    .link {
-      max-width: 45%;
+  @include min-screen() {
+    &:first-child {
+      max-width: 100%;
+
+      .link {
+        max-width: 45%;
+      }
     }
   }
 }
