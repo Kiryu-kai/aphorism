@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
 import { Layout } from '../components/Layout'
@@ -35,6 +35,11 @@ export default function PageTemplate({ data, pageContext }) {
     )
   })()
 
+  useEffect(() => {
+    // @ts-ignore
+    window.twttr.widgets.load()
+  })
+
   return (
     <Layout>
       <Helmet>
@@ -63,8 +68,7 @@ export default function PageTemplate({ data, pageContext }) {
           <div className={styles.sns}>
             <a
               className="twitter-share-button"
-              href="https://twitter.com/intent/tweet"
-              data-url={src}
+              href={`https://twitter.com/intent/tweet?url=${src}&hashtags=桐生ココの格言,${videoId}__${timestamp}`}
               data-text={`桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`}
               data-hashtags={`桐生ココの格言,${videoId}`}
               data-size="large">Tweet #桐生ココの格言</a>
