@@ -6,7 +6,10 @@ import { Footer } from '../components/Footer'
 import { RequestBtn } from '../components/RequestBtn'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { use100vh } from 'react-div-100vh'
+import { shuffle } from 'lodash'
 import cocoImg from './index/index-coco.png'
+import cocoImg02 from './index/index-coco-02.png'
+import cocoImg03 from './index/index-coco-03.png'
 import headerBg from './index/index-bg.jpg'
 import ogp from '../images/ogp.png'
 import * as styles from './index.module.scss'
@@ -32,6 +35,7 @@ const IndexPage = () => {
   )
 
   const height = use100vh()
+  const mv = shuffle([cocoImg, cocoImg02, cocoImg03])[0]
 
   return (
     <Layout>
@@ -59,7 +63,7 @@ const IndexPage = () => {
           </div>
 
           <div className={styles.coco}>
-            <img src={cocoImg} alt="" className={styles.coco__img} draggable={false} />
+            <img src={mv} alt="" className={styles.coco__img} draggable={false} />
           </div>
         </div>
 
