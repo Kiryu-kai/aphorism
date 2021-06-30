@@ -81,6 +81,8 @@ export default function PageTemplate({ data, pageContext }) {
                 <a
                   className="twitter-share-button"
                   href={`https://twitter.com/intent/tweet?url=${src.replace(`?`, `%3F`)}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                  data-url={src.replace(`?`, `%3F`)}
+                  data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
                   data-text={shareBtn.text}
                   data-size="large">Twitter #桐生ココの格言</a>
               </dd>
@@ -92,6 +94,8 @@ export default function PageTemplate({ data, pageContext }) {
                 <a
                   className="twitter-share-button"
                   href={`https://twitter.com/intent/tweet?url=${`https://kiryu-kai.github.io/aphorism${fields.slug}`}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                  data-url={`https://kiryu-kai.github.io/aphorism${fields.slug}`}
+                  data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
                   data-text={shareBtn.text}
                   data-size="large">Twitter #桐生ココの格言</a>
               </dd>
