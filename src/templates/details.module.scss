@@ -81,9 +81,6 @@
 }
 
 .sns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
   margin: 0 0 10px;
   font-size: 12px;
   text-align: right;
@@ -109,6 +106,12 @@
     iframe {
       display: block;
     }
+  }
+  
+  @include min-screen() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 }
 
