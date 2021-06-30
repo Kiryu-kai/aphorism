@@ -177,13 +177,14 @@
 }
 
 .main {
+  // TODO: 左右の余白とエリアのmax-widthをアウターとインナーで別々に持たせる
   position: relative;
   z-index: 1;
+  padding: 0 20px;
   overflow: hidden;
-
+  
   @include min-screen() {
     max-width: 1280px;
-    padding: 0 20px;
     padding-bottom: 100px;
     margin: 0 auto;
   }
