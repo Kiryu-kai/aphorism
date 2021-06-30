@@ -1,12 +1,5 @@
 @use "../utils/mixin.scss" as *;
 
-.wrap {
-  padding: 20px;
-
-  @include min-screen() {
-    padding: 40px;
-  }
-}
 
 .ul {
   padding: 0;
