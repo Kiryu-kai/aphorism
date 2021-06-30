@@ -146,9 +146,9 @@
     display: block;
     padding: 4px 40px;
     font-size: 12px;
-    cursor: inherit;
     color: #fff;
     text-decoration: none;
+    cursor: inherit;
     background: #ff0102;
     transform: translate(65px, -30px) rotate(38deg);
     transform-origin: 0 0 0;
@@ -161,13 +161,12 @@
 
       &:hover,
       &:focus {
-        cursor: pointer;
         padding: 40px 100px;
         color: #fff;
+        cursor: pointer;
         transform: translate(160px, -95px) rotate(38deg);
         backface-visibility: hidden;
       }
-
     }
   }
 }
