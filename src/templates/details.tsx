@@ -78,26 +78,30 @@ export default function PageTemplate({ data, pageContext }) {
             <div className={styles.sns__item}>
               <dt className={styles.sns__title}>元動画をシェアする</dt>
               <dd className={styles.sns__btn}>
-                <a
-                  className="twitter-share-button"
-                  href={`https://twitter.com/intent/tweet?url=${src.replace(`?`, `%3F`)}&hashtags=桐生ココの格言,${shareBtn.hash}`}
-                  data-url={src}
-                  data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
-                  data-text={shareBtn.text}
-                  data-size="large">Twitter #桐生ココの格言</a>
+                <span>
+                  <a
+                    className="twitter-share-button"
+                    href={`https://twitter.com/intent/tweet?url=${src.replace(`?`, `%3F`)}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                    data-url={src}
+                    data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
+                    data-text={shareBtn.text}
+                    data-size="large">Twitter #桐生ココの格言</a>
+                </span>
               </dd>
             </div>
 
             <div className={styles.sns__item}>
               <dt className={styles.sns__title}>このページをシェアする</dt>
               <dd className={styles.sns__btn}>
-                <a
-                  className="twitter-share-button"
-                  href={`https://twitter.com/intent/tweet?url=${`https://kiryu-kai.github.io/aphorism${fields.slug}`}&hashtags=桐生ココの格言,${shareBtn.hash}`}
-                  data-url={`https://kiryu-kai.github.io/aphorism${fields.slug}`}
-                  data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
-                  data-text={shareBtn.text}
-                  data-size="large">Twitter #桐生ココの格言</a>
+                <span>
+                  <a
+                    className="twitter-share-button"
+                    href={`https://twitter.com/intent/tweet?url=${`https://kiryu-kai.github.io/aphorism${fields.slug}`}&hashtags=桐生ココの格言,${shareBtn.hash}`}
+                    data-url={`https://kiryu-kai.github.io/aphorism${fields.slug}`}
+                    data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
+                    data-text={shareBtn.text}
+                    data-size="large">Twitter #桐生ココの格言</a>
+                </span>
               </dd>
             </div>
           </dl>
