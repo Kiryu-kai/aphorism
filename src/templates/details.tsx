@@ -81,7 +81,7 @@ export default function PageTemplate({ data, pageContext }) {
                 <a
                   className="twitter-share-button"
                   href={`https://twitter.com/intent/tweet?url=${src.replace(`?`, `%3F`)}&hashtags=桐生ココの格言,${shareBtn.hash}`}
-                  data-url={src.replace(`?`, `%3F`)}
+                  data-url={src}
                   data-hashtags={`桐生ココの格言,${shareBtn.hash}`}
                   data-text={shareBtn.text}
                   data-size="large">Twitter #桐生ココの格言</a>
