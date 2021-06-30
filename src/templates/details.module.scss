@@ -102,12 +102,13 @@
 
   &__btn {
     margin: 0;
+    transform: translateZ(0); // for iOS
 
     iframe {
       display: block;
     }
   }
-  
+
   @include min-screen() {
     display: flex;
     flex-wrap: wrap;
