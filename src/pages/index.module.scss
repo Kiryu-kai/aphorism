@@ -116,6 +116,7 @@
     height: auto;
     opacity: 0;
     transition: .3s opacity ease-out;
+    aspect-ratio: 179 / 176; // 895 / 880;
 
     &[data-state="loaded"] {
       opacity: 1;
@@ -124,8 +125,8 @@
 
   @include min-screen() {
     position: absolute;
-    top: 0;
     right: 0;
+    bottom: 0;
     z-index: -1;
     width: 100%;
     height: 100vh;
