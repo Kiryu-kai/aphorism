@@ -36,7 +36,7 @@ export default function PageTemplate({ data, pageContext }) {
     )
   })()
   const shareBtn = {
-    hash: `${videoId}__${timestamp}`,
+    hash: `${videoId.replace(/[^a-zA-Z0-9_]/g, ``)}_${timestamp}`,
     text: `桐生ココ「${frontmatter.words.length < 20 ? frontmatter.words : frontmatter.words.slice(0, 19) + `…`} 」`,
   }
 
