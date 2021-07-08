@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: '#桐生ココの格言',
+    title: '#桐生ココの格言 | 桐生会',
   },
   pathPrefix: '/aphorism',
   plugins: [
