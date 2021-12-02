@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-details-tsx","path":"/rSCDDD4l8po.1000/","result":{"data":{"site":{"siteMetadata":{"title":"#桐生ココの格言 | 桐生会"}},"markdownRemark":{"frontmatter":{"words":"そのまま言う奴いる？","tags":["名シーン","ネタ","あさココLIVE"]},"fields":{"slug":"/rSCDDD4l8po.1000/"},"html":"<p>止めてみろマネージャー！そういうことですね。</p>"}},"pageContext":{"slug":"/rSCDDD4l8po.1000/","previous":{"frontmatter":{"words":"自分の人生は自分が主役〜会社はあなたの人生になんの責任も取ってくれないので。"},"fields":{"slug":"/TYs6erA38Dc.1857/"}},"next":{"frontmatter":{"words":"立てばアイドル、座れば893、歩く姿は無収益"},"fields":{"slug":"/ZUOQvvba_Uo.28/"}}}},"staticQueryHashes":[]}
+{
+    "componentChunkName": "component---src-templates-details-tsx",
+    "path": "/rSCDDD4l8po.1000/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"#桐生ココの格言 | 桐生会"}},"markdownRemark":{"frontmatter":{"words":"そのまま言う奴いる？","tags":["名シーン","ネタ","あさココLIVE"]},"fields":{"slug":"/rSCDDD4l8po.1000/"},"html":"<p>止めてみろマネージャー！そういうことですね。</p>"}},"pageContext":{"slug":"/rSCDDD4l8po.1000/","previous":{"frontmatter":{"words":"自分の人生は自分が主役〜会社はあなたの人生になんの責任も取ってくれないので。"},"fields":{"slug":"/TYs6erA38Dc.1857/"}},"next":{"frontmatter":{"words":"立てばアイドル、座れば893、歩く姿は無収益"},"fields":{"slug":"/ZUOQvvba_Uo.28/"}}}},
+    "staticQueryHashes": []}
