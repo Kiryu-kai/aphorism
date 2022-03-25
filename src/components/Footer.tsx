@@ -37,10 +37,10 @@ export function Footer() {
 
           <ul className={styles.inspired__ul}>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/ragnaSUS">ラグナ(@ragnaSUS) - Twitter</a>
+              <a href="https://twitter.com/ragnaSUS" rel="noopener noreferrer" target="_blank">ラグナ(@ragnaSUS) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/rome0504/status/1407185429242122244">ローマ(@rome0504) - Twitter</a>
+              <a href="https://twitter.com/rome0504/status/1407185429242122244" rel="noopener noreferrer" target="_blank">ローマ(@rome0504) - Twitter</a>
             </li>
           </ul>
 
@@ -48,13 +48,13 @@ export function Footer() {
 
           <ul className={styles.inspired__ul}>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/kiryucoco/status/1218277670040956928">桐生ココ🐉 (@kiryucoco) - Twitter</a>
+              <a href="https://twitter.com/kiryucoco/status/1218277670040956928" rel="noopener noreferrer" target="_blank">桐生ココ🐉 (@kiryucoco) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/kokoa_m0901/status/1409028882385174531">森永 茲亜(ココア)(@kokoa_m0901) - Twitter</a>
+              <a href="https://twitter.com/kokoa_m0901/status/1409028882385174531" rel="noopener noreferrer" target="_blank">森永 茲亜(ココア)(@kokoa_m0901) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
-              <a href="https://pixelbuddha.net/textures/paper-textures-kit">PAPER TEXTURES KIT - Pixelbuddha</a>
+              <a href="https://pixelbuddha.net/textures/paper-textures-kit" rel="noopener noreferrer" target="_blank">PAPER TEXTURES KIT - Pixelbuddha</a>
             </li>
           </ul>
         </div>
