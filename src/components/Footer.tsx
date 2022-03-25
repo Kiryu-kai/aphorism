@@ -37,10 +37,10 @@ export function Footer() {
 
           <ul className={styles.inspired__ul}>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/ragnaSUS">UNこの悪魔ラグナ🐉［雪民］(レ)(@ragnaSUS) - Twitter</a>
+              <a href="https://twitter.com/ragnaSUS">ラグナ(@ragnaSUS) - Twitter</a>
             </li>
             <li className={styles.inspired__li}>
-              <a href="https://twitter.com/rome0504/status/1407185429242122244">ローマ・アビュース🐉(@rome0504) - Twitter</a>
+              <a href="https://twitter.com/rome0504/status/1407185429242122244">ローマ(@rome0504) - Twitter</a>
             </li>
           </ul>
 
